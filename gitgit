@@ -1,0 +1,34 @@
+#! /bin/bash
+USERNAME=modeverv
+cd `dirname $0`
+function git_init() {
+    git init
+    git lfs install
+    git lfs track "*.psd"
+    git lfs track "*.png"
+    git lfs track "*.png"
+    git lfs track "*.mp3"
+    git lfs track "*.wav"
+    git lfs track "*.aiff"
+    git lfs track "*.flac"
+    git lfs track "*.m4a"
+    git lfs track "*.ogg"
+    hub create
+}
+function git_commit_push() {
+    MESSAGE=$1
+    if [ -z "$MESSAGE" ]; then
+        MESSAGE=`date +"%Y-%m-%d %H:%M:%S"`
+    fi
+    git add .
+    git commit -m "$MESSAGE"
+    git push --all
+}
+if git rev-parse --git-dir > /dev/null 2>&1; then
+    git_commit_push $1;
+else
+    git_init;
+    git_commit_push $1;
+fi
+#hub browse
+
