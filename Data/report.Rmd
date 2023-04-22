@@ -1,0 +1,50 @@
+---
+title: "Rで学ぶ確率統計"
+author: ["学生番号 1234567890"  ,"氏名 秋光淳生"]
+date: "2021/10/05"
+output: 
+  word_document:
+    reference_docx: sample21.docx
+---
+
+<!-- 
+  この中身はコメントとして処理では無視される
+  下の行は R のchunk のメモ
+  -->
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# レポート
+
+レポートはRmdで作成し、__Word__ 形式で提出する
+<!--
+  # 
+  ## は見出し
+--> 
+
+```{r cars}
+summary(cars)
+```
+
+## もう一つ小さい見出し
+
+このように小さい見出しも作成できる。数式を書きたい場合には
+正規分布の密度関数は $\mu$,$\sigma$ を用いて
+<!-- 
+$$で囲んで数式を入力する。
+-->
+例えば、$$f(x)=\frac{1}{\sqrt{2\pi}} \exp(-\frac{(x-\mu)^2}{\sigma^2})$$
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+<!-- 
+```{r}
+# この部分はR の命令を書く部分で、一つの塊をchunkという。
+# chunk に名前をつけることもできる
+```
+-->
+
+

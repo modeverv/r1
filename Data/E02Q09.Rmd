@@ -1,0 +1,30 @@
+---
+title: "sample"
+author: "name"
+date: "2021/04/05"
+output: 
+  word_document:
+    reference_docx: sample21.docx
+---
+  
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple
+
+```{r sum1}
+1+2
+```
+日本語を書く。
+```{r sum2 ,  message=TRUE ,  warning=FALSE}
+library(tidyverse)
+sum(1:3)
+```
+
+<!--
+   メモ
+--> 
+  
+文を追加する。
+```{r sum3 , echo=FALSE}
+sum(2:4)
+```
