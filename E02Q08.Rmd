@@ -1,0 +1,13 @@
+---
+title: "sample"
+author: "name"
+date: "01/01/2021"
+output: html_document
+---
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple
+```{r}
+1+2
+```
