@@ -98,7 +98,31 @@ x24
 
 x21 <- read_csv("E02P01.csv")
 x22 <- table(x21$study,x21$result)
+x22
 x23 <- prop.table(x22)
 x23
 x24 <- addmargins(x23)
 x24
+# 小テスト 2-2
+x21 <- read_csv("E02P01.csv")
+x22 <- table(x21$study,x21$result)
+x22
+x23 <- prop.table(x22)
+x23
+x24 <- addmargins(x22)
+x24
+library(ggplot2)
+library(magrittr)
+library(dplyr)
+
+jinko <- read.csv("jinko.csv")
+jinko2 <-  jinko[c(4,7)]
+jinko2 <- jinko2 %>% arrange(年齢階級)
+ggplot(jinko2, aes(x = 年齢階級, y = 男女計)) +
+  geom_bar(stat = "identity") +
+  labs(x = "年齢階級", y = "人口(万人)", title = "年齢階級別人口") +
+     theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+install.packages('tidyyerse')
+install.packages('knitr')
+install.packages('ggplot2')
