@@ -126,3 +126,57 @@ ggplot(jinko2, aes(x = 年齢階級, y = 男女計)) +
 install.packages('tidyyerse')
 install.packages('knitr')
 install.packages('ggplot2')
+
+library('tidyverse')
+d02 <- read_csv("A03L02.csv")
+var(d02)
+cor(d02)
+
+data = read.csv("p3-1-2.csv")
+values <- rep(data$階級値, data$度数)
+values <- c(11,21,31,32,41,43,51,52,53,55,57,61,62,71,74,85)
+values
+mean <- mean(values)
+median <-  median(values)
+frequency_table <- table(values)
+frequency_table
+mode_value <- as.numeric(names(frequency_table[frequency_table == max(frequency_table)]))
+
+cat("最頻値:", mode_value, "\n")
+# mode <- as.numeric(names(which.max(table(values))))
+cat("最頻値: ", mode, "\n")
+cat("中央値: ", median, "\n")
+cat("平均値: ", mean, "\n")
+# 四分位数の計算
+quantiles <- quantile(values)
+cat("第1四分位数 (Q1):", quantiles[2], "\n")
+cat("第2四分位数 (Q2, 中央値):", quantiles[3], "\n")
+cat("第3四分位数 (Q3):", quantiles[4], "\n")
+
+
+9 /40
+
+# sec4
+library('tidyverse')
+
+f1 <- tibble(x=0:10,y=dgeom(seq(0,10,1),0.2))
+f1
+ggplot(f1) + geom_bar(aes(x=x,y=y),stat="identity")
+
+ggplot(data=data.frame(x=c(-1,1.5)),aes(x=x)) +
+  stat_function(fun=dexp,args=c(rate=1))
+
+1/15 + 3/4
+# sec4-3-1
+dbinom(0,20,1/3)+dbinom(1,20,1/3)+dbinom(2,20,1/3)+dbinom(3,20,1/3)+dbinom(4,20,1/3)
+pbinom(4,20,1/3)
+
+# sec4-3-2
+dpois(0,2)+dpois(1,2)+dpois(2,2)
+ppois(2,2)
+# sec4-3-3
+1- pexp(1,rate=2)
+# sec4-3-4
+pgamma(1,rate=2,shape=3)
+# sec4-3-5
+pnorm(40,mean=50,sd=10)
