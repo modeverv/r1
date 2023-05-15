@@ -33,6 +33,8 @@ x01 <- c(118,119,120,121,123)
 x01[2:4]
 x01[1]
 
+
+
 print('1-2-3')
 x01 <- c(118,119,120,121,123)
 x02 <- length(x01)
@@ -180,3 +182,11 @@ ppois(2,2)
 pgamma(1,rate=2,shape=3)
 # sec4-3-5
 pnorm(40,mean=50,sd=10)
+
+
+ggplot(data=data.frame(x=c(-4,4)), aes(x=x)) +
+  stat_function(fun=dt, args=c(df=10) )
+ggplot(data=data.frame(x=c(0,6)), aes(x=x)) +
+ stat_function(fun=df, args=c(df1=3,df2=10) )
+ggplot(data=data.frame(x=c(-0.5,1.5)), aes(x=x)) +
+ stat_function(fun=dunif, args=c(min=0,max=1) )
